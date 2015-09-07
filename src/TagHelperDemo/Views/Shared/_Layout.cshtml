@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using TagHelperDemo.Controllers
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -32,6 +34,11 @@
                     <a asp-controller="Home" asp-action="Index" class="navbar-brand">TagHelperDemo</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                    <controller-navigation controller-type="typeof(HomeController)"
+                                           exclude="@nameof(HomeController.Error)"
+                                           style="margin-right:40px"
+                                           class="nav navbar-nav" />
+
                     <ul class="nav navbar-nav">
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Home" asp-action="About">About</a></li>
